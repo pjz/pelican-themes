@@ -1,7 +1,7 @@
-{{ article.locale_date }}
+<span class="dt-published">{{ article.locale_date }}</span>
 
 {% if article.author %}
-by <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
+by <a class="url fn p-author" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
     {% if article.translations %}
         <a href="{{ SITEURL }}/{{ article.url }}" class="btn btn-info xsmall">{{ article.lang or DEFAULT_LANG }}</a>
         {% for translation in article.translations %}
@@ -10,7 +10,7 @@ by <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.au
     {% endif %}
 {% endif %} 
 
-{# Filed under <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a> #}
+{# Filed under <a class="p-category" href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a> #}
 
 {# 
 {% if article.tags %} 

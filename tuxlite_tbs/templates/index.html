@@ -8,13 +8,13 @@
 {# First item #}
 {% if loop.first and not articles_page.has_previous() %}
 
-    <div class='article'>
+    <div class='article h-entry'>
         <div class="content-title">
-            <a href="{{ SITEURL }}/{{ article.url }}"><h1>{{ article.title }}</h1></a>
+            <a class="u-url" href="{{ SITEURL }}/{{ article.url }}"><h1 class="p-name">{{ article.title }}</h1></a>
             {% include "metadata.html" %} 
         </div>
         
-        <div>{{ article.content }}</div>
+        <div class="e-content">{{ article.content }}</div>
         <hr />
     </div>
 		
@@ -25,10 +25,10 @@
 {# other items #}
 {% else %} 
 
-    <div class='article'>
+    <div class='article h-entry'>
         <a href="{{ SITEURL }}/{{ article.url }}"><h2>{{ article.title }}</h2></a>
         <div class= "well small"> {% include "metadata.html" %} </div>
-        <div class="summary">{{ article.summary }} <a class="btn btn-info xsmall" href="{{ SITEURL }}/{{ article.url }}">read more</a></div>
+        <div class="summary p-summary">{{ article.summary }} <a class="btn btn-info xsmall u-url" href="{{ SITEURL }}/{{ article.url }}">read more</a></div>
     </div>	
 				
     {% if loop.last and (articles_page.has_previous() or not articles_page.has_previous() and loop.length > 1) %}
