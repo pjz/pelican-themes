@@ -12,8 +12,6 @@ by <a class="url fn p-author" href="{{ SITEURL }}/{{ article.author.url }}">{{ a
 
 {# Filed under <a class="p-category" href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a> #}
 
-{# 
 {% if article.tags %} 
-    Tags {% for tag in article.tags %}<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> {% endfor %}
+    Tagged as {% for tag in article.tags %}<a class="p-category" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> {% endfor %}
 {% endif %}
-#}
